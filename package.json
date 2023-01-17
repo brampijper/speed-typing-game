@@ -1,0 +1,42 @@
+{
+  "name": "speed-typing-game",
+  "version": "1.0.0",
+  "description": "type words as fast as you can",
+  "main": "index.js",
+  "scripts": {
+    "serve": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brampijper/speed-typing-game.git"
+  },
+  "keywords": [
+    "javascript",
+    "react",
+    "hooks"
+  ],
+  "author": "Bram Pijper",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brampijper/speed-typing-game/issues"
+  },
+  "homepage": "https://github.com/brampijper/speed-typing-game#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/register": "^7.18.9",
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.7.3",
+    "html-webpack-plugin": "^5.5.0",
+    "jsxobj": "^1.1.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
