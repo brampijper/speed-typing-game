@@ -1,43 +1,17 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import "./App.css";
+import useWordGame from "./useWordGame";
 
 function App() {
-    const STARTING_TIME = 5;
-    const [text, setText] = useState('')
-    const [timeRemaining, settimeRemaining] = useState(STARTING_TIME)
-    const [isTimeRunning, setisTimeRunning] = useState(false)
-    const [wordCount, setWordCount] = useState(0)
-    const textAreaRef = useRef(null)
-
-    function handleChange(event) {
-        const { value } = event.target
-        setText(value)
-    }
-
-    function calculateWordCount() {
-        const words = text.trim().split(' ')
-        const filteredWords = words.filter(word => word !== "")
-        setWordCount(filteredWords.length)
-    }
-
-    function startGame() {
-        settimeRemaining(STARTING_TIME);
-        setisTimeRunning(true)
-        setText("")
-        textAreaRef.current.disabled = false
-        textAreaRef.current.focus()
-    }
-
-    useEffect( () => {
-        if(isTimeRunning && timeRemaining > 0) {
-            setTimeout( () => {
-                settimeRemaining(prevState => prevState - 1)
-            }, 1000)
-        } else {
-            calculateWordCount()
-            setisTimeRunning(false)
-        }
-    }, [timeRemaining, isTimeRunning])
+    const {
+        text,
+        wordCount, 
+        isTimeRunning, 
+        timeRemaining, 
+        textAreaRef,
+        startGame,
+        handleChange
+    } = useWordGame()
 
     return (
         <div>
